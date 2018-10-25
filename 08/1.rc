@@ -1,0 +1,1110 @@
+#include <winres.h>
+
+LANGUAGE 4, 0
+100 MENU DISCARDABLE
+BEGIN
+	POPUP "文件(&F)"
+	BEGIN
+		MENUITEM "新建(&N)\tCtrl+N"	40000
+		MENUITEM "打开(&O)...\tCtrl+O"	40001
+		MENUITEM "恢复(&V)\tF5"	40002
+		MENUITEM "保存(&S)\tCtrl+S"	40004
+		MENUITEM "另存为(&A)...\tF6"	40005
+		MENUITEM "保存副本(&C)...\tCtrl+F6"	40006
+		MENUITEM "只读(&R)"	40007
+		MENUITEM ""	0
+		POPUP "启动(&L)"
+		BEGIN
+			MENUITEM "新窗口(&N)\tAlt+N"	40011
+			MENUITEM "空白窗口(&E)\tAlt+0"	40012
+			MENUITEM ""	0
+			MENUITEM "运行文件(&D)\tCtrl+L"	40008
+			MENUITEM "打开方式(&O)...\tAlt+L"	40009
+			MENUITEM "命令(&C)...\tCtrl+R"	40010
+		END
+		MENUITEM ""	0
+		POPUP "编码(&E)"
+		BEGIN
+			MENUITEM "&ANSI"	40100
+			MENUITEM "&Unicode"	40101
+			MENUITEM "Unicode 高位在前(&B)"	40102
+			MENUITEM "UTF-&8"	40103
+			MENUITEM "UTF-8 包含签名(&S)"	40104
+			MENUITEM "更多...\tF9"	40105
+			MENUITEM ""	0
+			MENUITEM "重新编码...\tF8"	40106
+			MENUITEM ""	0
+			MENUITEM "默认..."	40107
+		END
+		POPUP "换行编码(&G)"
+		BEGIN
+			MENUITEM "&Windows (CR+LF)"	40200
+			MENUITEM "&Unix (LF)"	40201
+			MENUITEM "&Mac (CR)"	40202
+			MENUITEM ""	0
+			MENUITEM "默认(&D)..."	40203
+		END
+		MENUITEM ""	0
+		MENUITEM "页面设置(&T)..."	40013
+		MENUITEM "打印(&P)...\tCtrl+P"	40014
+		MENUITEM ""	0
+		MENUITEM "属性(&I)..."	40015
+		MENUITEM "创建桌面快捷方式(&D)"	40016
+		MENUITEM ""	0
+		POPUP "收藏夹(&F)"
+		BEGIN
+			MENUITEM "打开收藏夹(&O)...\tAlt+I"	40017
+			MENUITEM "添加当前文件(&A)...\tAlt+K"	40018
+			MENUITEM "管理(&M)...\tAlt+F9"	40019
+		END
+		MENUITEM "最近的文件(&H) (历史)...\tAlt+H"	40020
+		MENUITEM ""	0
+		MENUITEM "退出(&X)\tAlt+F4"	40021
+	END
+	POPUP "编辑(&E)"
+	BEGIN
+		MENUITEM "撤消(&U)\tCtrl+Z"	40300
+		MENUITEM "重做(&R)\tCtrl+Y"	40301
+		MENUITEM ""	0
+		MENUITEM "剪切(&T)\tCtrl+X"	40302
+		MENUITEM "复制(&C)\tCtrl+C"	40303
+		MENUITEM "复制全部(&l)\tAlt+C"	40304
+		MENUITEM "复制追加(&A)\tCtrl+E"	40305
+		MENUITEM "粘贴(&P)\tCtrl+V"	40306
+		MENUITEM "交换(&W)\tCtrl+K"	40307
+		MENUITEM "删除\tDel\tDel"	40308
+		MENUITEM "清空剪贴板(&D)"	40309
+		MENUITEM "全选(&S)\tCtrl+A"	40310
+		MENUITEM ""	0
+		POPUP "行(&I)"
+		BEGIN
+			MENUITEM "上移(&U)\tCtrl+Shift+Up"	40313
+			MENUITEM "下移(&M)\tCtrl+Shift+Down"	40314
+			MENUITEM ""	0
+			MENUITEM "创建当前行副本(&D) \tCtrl+D"	40315
+			MENUITEM "剪切(&C)\tCtrl+Shift+X"	40316
+			MENUITEM "复制(&O)\tCtrl+Shift+C"	40317
+			MENUITEM "删除(&E)\tCtrl+Shift+D"	40318
+			MENUITEM ""	0
+			MENUITEM "列换行(&W)\tCtrl+Shift+W"	40321
+			MENUITEM "分割行(&S)\tCtrl+I"	40322
+			MENUITEM "合并行(&J)\tCtrl+J"	40323
+			MENUITEM "加入段落(&P)\tCtrl+Shift+J"	40324
+		END
+		POPUP "区块(&B)"
+		BEGIN
+			MENUITEM "缩进(&I)\tTab"	40325
+			MENUITEM "取消缩进(&U)\tShift+Tab"	40326
+			MENUITEM ""	0
+			MENUITEM "在选定区域前/后插入文本(&E)...\tAlt+Q"	40327
+			MENUITEM "创建选定区域副本(&D)\tAlt+D"	40328
+			MENUITEM ""	0
+			MENUITEM "填充空格(&P)\tAlt+B"	40329
+			MENUITEM "移除首字符(&F)\tAlt+Z"	40330
+			MENUITEM "移除尾字符(&L)\tAlt+U"	40331
+			MENUITEM "移除结尾空格(&T)\tAlt+W"	40332
+			MENUITEM "压缩空格(&W)\tAlt+P"	40333
+			MENUITEM "合并空白行(&Y)\tAlt+Y"	40334
+			MENUITEM "移除空行(&R)\tAlt+R"	40335
+			MENUITEM ""	0
+			MENUITEM "修改行(&M)...\tAlt+M"	40336
+			MENUITEM "排成一行(&J)...\tAlt+J"	40338
+			MENUITEM "排序行(&o)...\tAlt+O"	40337
+		END
+		POPUP "转换(&O)"
+		BEGIN
+			MENUITEM "大写(&U)\tCtrl+Shift+U"	40339
+			MENUITEM "小写(&L)\tCtrl+U"	40340
+			MENUITEM ""	0
+			MENUITEM "反转大小写(&I)\tCtrl+Alt+U"	40341
+			MENUITEM "单词首字母大写(&C)\tCtrl+Alt+I"	40342
+			MENUITEM "语句首字母大写(&S)\tCtrl+Alt+O"	40343
+			MENUITEM ""	0
+			MENUITEM "转换选定区域中的空格为制表符(&T)\tCtrl+Shift+T"	40345
+			MENUITEM "转换选定区域内的制表符为空格(&N)\tCtrl+Shift+S"	40344
+			MENUITEM ""	0
+			MENUITEM "制表符缩进(&B)\tCtrl+Alt+T"	40347
+			MENUITEM "空格符缩进(&F)\tCtrl+Alt+S"	40346
+		END
+		POPUP "插入(&N)"
+		BEGIN
+			MENUITEM "&HTML/XML 标记...\tAlt+X"	40348
+			MENUITEM ""	0
+			MENUITEM "文件编码标示(&E)\tCtrl+F8"	40349
+			MENUITEM ""	0
+			MENUITEM "时间/日期(&S) (短格式)\tCtrl+F5"	40350
+			MENUITEM "时间/日期(&L) (长格式)\tCtrl+Shift+F5"	40351
+			MENUITEM ""	0
+			MENUITEM "文件名称(&F)\tCtrl+F9"	40352
+			MENUITEM "路径与文件名称(&P)\tCtrl+Shift+F9"	40353
+		END
+		POPUP "特殊(&I)"
+		BEGIN
+			MENUITEM "行注释(&T) (切换)\tCtrl+Q"	40354
+			MENUITEM "块注释(&C)\tCtrl+Shift+Q"	40355
+			MENUITEM ""	0
+			MENUITEM "URL编码(&E)\tCtrl+Shift+E"	40356
+			MENUITEM "URL解码(&D)\tCtrl+Shift+R"	40357
+			MENUITEM ""	0
+			MENUITEM "忽略字符'C'(&P)\tCtrl+Alt+E"	40358
+			MENUITEM "不忽略字符'C'(&U)\tCtrl+Alt+R"	40359
+			MENUITEM ""	0
+			MENUITEM "字符转换为HEX\tCtrl+Alt+X"	40360
+			MENUITEM "HEX转换为字符\tCtrl+Alt+C"	40361
+			MENUITEM ""	0
+			MENUITEM "查找配对的括号(&F)\tCtrl+B"	40362
+			MENUITEM "选择配对的括号(&S)\tCtrl+Shift+B"	40363
+			MENUITEM ""	0
+			MENUITEM "选择之后(&x)\tCtrl+Alt+F2"	40371
+			MENUITEM "选择之前(&v)\tCtrl+Alt+Shift+F2"	40372
+			MENUITEM ""	0
+			MENUITEM "完成单词\tCtrl+Enter"	40373
+		END
+		POPUP "书签"
+		BEGIN
+			MENUITEM "切换\tCtrl+F2"	40254
+			MENUITEM ""	0
+			MENUITEM "转到下一页\tF2"	40255
+			MENUITEM "转到上一页\tShift+F2"	40257
+			MENUITEM ""	0
+			MENUITEM "清除所有\tAlt+F2"	40256
+		END
+		MENUITEM ""	0
+		MENUITEM "查找(&F)...\tCtrl+F"	40364
+		MENUITEM "保存查找文本(&V)\tAlt+F3"	40365
+		MENUITEM "查找下一个(&X)\tF3"	40366
+		MENUITEM "查找上一个(&V)\tShift+F3"	40367
+		MENUITEM "替换(&E)...\tCtrl+H"	40368
+		MENUITEM "替换下一个\tF4"	40369
+		MENUITEM "转到(&G)...\tCtrl+G"	40370
+	END
+	POPUP "查看(&V)"
+	BEGIN
+		MENUITEM "语法方案(&S)...\tF12"	40400
+		MENUITEM "第二种默认方案(&2)\tShift+F12"	40401
+		MENUITEM "自定义方案(&C)...\tCtrl+F12"	40402
+		MENUITEM "默认字体(&D)...\tAlt+F12"	40403
+		MENUITEM ""	0
+		MENUITEM "自动换行(&R)\tCtrl+W"	40404
+		MENUITEM "行标记(&L)\tCtrl+Shift+L"	40405
+		MENUITEM "显示缩进栏线(&G)\tCtrl+Shift+G"	40406
+		MENUITEM ""	0
+		MENUITEM "显示空格(&W)\tCtrl+Shift+8"	40407
+		MENUITEM "显示换行编码(&E)\tCtrl+Shift+9"	40408
+		MENUITEM "显示换行符号(&Y)\tCtrl+Shift+0"	40409
+		MENUITEM ""	0
+		MENUITEM "显示配对括号(&B)\tCtrl+Shift+V"	40410
+		MENUITEM "高亮当前行(&U)\tCtrl+Shift+I"	40411
+		POPUP "标记事件(&K)"
+		BEGIN
+			MENUITEM "关闭(&O)"	40447
+			MENUITEM "蓝色(&B)"	40448
+			MENUITEM "绿色(&G)"	40449
+			MENUITEM "红色(&R)"	40450
+			MENUITEM ""	0
+			MENUITEM "区分大小写(&C)"	40451
+			MENUITEM "仅全字符匹配(&W)"	40452
+		END
+		MENUITEM ""	0
+		MENUITEM "行号(&N)\tCtrl+Shift+N"	40412
+		MENUITEM "选区边缘(&M)\tCtrl+Shift+M"	40413
+		MENUITEM ""	0
+		MENUITEM "代码折叠(&F)\tCtrl+Shift+Alt+F"	40445
+		MENUITEM "切换所有折叠(&T)\tCtrl+Shift+F"	40446
+		MENUITEM ""	0
+		MENUITEM "放大(&I)\tCtrl++"	40414
+		MENUITEM "缩小(&O)\tCtrl+-"	40415
+		MENUITEM "重置缩放(&Z)\tCtrl+/"	40416
+	END
+	POPUP "设置(&S)"
+	BEGIN
+		MENUITEM "将制表符作为空格插入(&S)"	40417
+		MENUITEM "制表符设置(&T)...\tCtrl+T"	40418
+		MENUITEM "自动换行设置(&W)..."	40419
+		MENUITEM "行标记设置(&L)..."	40420
+		MENUITEM "自动缩进文本(&D)"	40421
+		MENUITEM "自动关闭 &HTML/XML\tCtrl+Shift+H"	40422
+		MENUITEM "自动完成单词(&R)"	40453
+		MENUITEM ""	0
+		MENUITEM "重用窗口(&R)"	40423
+		MENUITEM "保存窗口位置(&P)"	40424
+		MENUITEM "总在最前(&A)\tAlt+T"	40425
+		MENUITEM "最小化到系统托盘(&Z)"	40426
+		MENUITEM "透明模式(&M)\tCtrl+0"	40427
+		MENUITEM ""	0
+		MENUITEM "单文件实例(&F)"	40428
+		MENUITEM "文件更改通知(&C)...\tAlt+F5"	40429
+		POPUP "窗口标题显示(&Y)"
+		BEGIN
+			MENUITEM "仅显示文件名称(&O)"	40430
+			MENUITEM "显示文件名称与目录(&D)"	40431
+			MENUITEM "显示完整路径名称(&P)"	40432
+			MENUITEM "摘录文本(&T)\tCtrl+9"	40433
+		END
+		POPUP "Esc键功能(&K)"
+		BEGIN
+			MENUITEM "无任何功能(&N)"	40434
+			MENUITEM "最小化 Notepad2-mod(&M)"	40435
+			MENUITEM "退出 Notepad2-mod(&X)"	40436
+		END
+		MENUITEM "在运行工具前保存(&V)"	40437
+		MENUITEM "记住最近使用的文件(&I)"	40438
+		MENUITEM "记住最近搜索的字符串(&E)"	40439
+		MENUITEM ""	0
+		MENUITEM "显示工具栏(&O)"	40440
+		MENUITEM "自定义工具栏(&U)..."	40441
+		MENUITEM "显示状态栏(&O)"	40442
+		MENUITEM ""	0
+		MENUITEM "退出时保存设置(&X)"	40443
+		MENUITEM "立即保存设置(&N)\tF7"	40444
+	END
+	POPUP "帮助(&H)"
+	BEGIN
+		MENUITEM "关于(&A)...\tF1"	40500
+	END
+END
+
+101 MENU DISCARDABLE
+BEGIN
+	POPUP "+"
+	BEGIN
+		MENUITEM "撤消(&U)"	40300
+		MENUITEM "重做(&R)"	40301
+		MENUITEM ""	0
+		MENUITEM "剪切(&T)"	40302
+		MENUITEM "复制(&C)"	40303
+		MENUITEM "粘贴(&P)"	40306
+		MENUITEM "清除(&E)"	40308
+		MENUITEM ""	0
+		MENUITEM "全选(&S)"	40310
+	END
+	POPUP "+"
+	BEGIN
+		MENUITEM "显示工具栏(&T)"	40440
+		MENUITEM "自定义工具栏(&C)..."	40441
+		MENUITEM "显示状态栏(&S)"	40442
+	END
+	POPUP "+"
+	BEGIN
+		MENUITEM "打开 Notepad2-mod"	40600
+		MENUITEM "退出 Notepad2-mod"	40601
+	END
+END
+
+
+100 DIALOGEX 0,0,255,130
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME | DS_NOFAILCREATE
+CAPTION "Notepad2-mod"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	DEFPUSHBUTTON	"确定",1,195,107,50,14,0
+	ICON		100,-1,7,7,21,20,0
+	LTEXT		"",100,45,7,200,8,WS_GROUP
+	LTEXT		""编译工具: "",302,45,19,200,8,WS_GROUP
+	LTEXT		"",301,96,19,200,8,WS_GROUP
+	LTEXT		"",101,45,35,200,8,WS_GROUP
+	LTEXT		"",103,45,44,200,8,NOT WS_VISIBLE | WS_GROUP | WS_DISABLED
+	CONTROL	"",102,"SysLink",WS_TABSTOP,45,44,200,10
+	LTEXT		"浏览 Notepad2-mod 的项目主页:",-1,45,60,200,8,WS_GROUP
+	LTEXT		"",104,45,69,200,8,NOT WS_VISIBLE | WS_GROUP | WS_DISABLED
+	CONTROL	"",112,"SysLink",WS_TABSTOP,45,69,200,10
+	LTEXT		"联系 Florian Balmer:",-1,45,85,200,8,WS_GROUP
+	LTEXT		"",106,45,94,200,8,NOT WS_VISIBLE | WS_GROUP | WS_DISABLED
+	CONTROL	"",105,"SysLink",WS_TABSTOP,45,94,200,10
+END
+
+101 DIALOGEX 0,0,165,129
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "打开方式..."
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_AUTOHSCROLL | CBS_LOWERCASE,7,7,151,69
+	PUSHBUTTON	"",101,7,83,13,13,0
+	LTEXT		"点这里指定选择包含你想要使用的应用程序的目录。",102,26,83,132,18,WS_GROUP
+	DEFPUSHBUTTON	"确定",1,52,108,50,14,0
+	PUSHBUTTON	"取消",2,108,108,50,14,0
+	SCROLLBAR	103,7,112,10,10,0
+END
+
+102 DIALOGEX 0,0,224,85
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "运行"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	ICON		101,-1,7,7,20,20,0
+	LTEXT		"输入一个可执行程序文件的名称、一个要打开的文件夹或文档。",-1,35,7,188,17,WS_GROUP
+	EDITTEXT	100,35,35,165,13,WS_BORDER | ES_AUTOHSCROLL
+	PUSHBUTTON	"",101,204,35,13,13,0
+	DEFPUSHBUTTON	"确定",1,112,64,50,14,0
+	PUSHBUTTON	"取消",2,167,64,50,14,0
+END
+
+103 DIALOGEX 0,0,180,118
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "编码"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"默认编码(&D):",-1,7,7,58,8,WS_GROUP
+	CONTROL	"",100,"ComboBoxEx32",WS_TABSTOP | WS_VSCROLL | WS_CLIPSIBLINGS | CBS_DROPDOWNLIST,7,20,166,128
+	CONTROL	"跳过Unicode自动检测(&U).",101,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,43,124,10
+	CONTROL	"以UTF-8模式打开7-bit ASCII文件",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,53,136,10
+	CONTROL	"以DOS-437模式打开8-bit的nfo或diz文件",300,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,63,166,10
+	CONTROL	"不解释编码标识(&T).",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,73,102,10
+	DEFPUSHBUTTON	"确定",1,68,97,50,14,0
+	PUSHBUTTON	"取消",2,123,97,50,14,0
+END
+
+104 DIALOGEX 0,0,165,135
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "编码"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"当前文件编码方式(&E):",-1,7,7,90,8,WS_GROUP
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_LOWERCASE,7,19,151,87
+	DEFPUSHBUTTON	"确定",1,53,114,50,14,WS_DISABLED
+	PUSHBUTTON	"取消",2,108,114,50,14,0
+	SCROLLBAR	101,7,118,10,10,0
+END
+
+105 DIALOGEX 0,0,165,135
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "重新编码"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"选取源编码方式重新加载文件(&E):",-1,7,7,119,8,WS_GROUP
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_LOWERCASE,7,19,151,87
+	DEFPUSHBUTTON	"确定",1,53,114,50,14,WS_DISABLED
+	PUSHBUTTON	"取消",2,108,114,50,14,0
+	SCROLLBAR	101,7,118,10,10,0
+END
+
+106 DIALOGEX 0,0,180,78
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "换行编码"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"默认换行编码模式(&D):",-1,7,7,82,8,WS_GROUP
+	COMBOBOX	100,7,20,98,196,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	CONTROL	"保存文件时确保换行编码一致(&E)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX | BS_TOP | BS_BOTTOM,7,48,157,10
+	CONTROL	"保存文件时去除行尾空格(&S)",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,60,121,10
+	DEFPUSHBUTTON	"确定",1,123,7,50,14,0
+	PUSHBUTTON	"取消",2,123,24,50,14,0
+END
+
+107 DIALOGEX 0,0,165,129
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "收藏夹"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_AUTOHSCROLL | CBS_LOWERCASE,7,7,151,69
+	PUSHBUTTON	"",101,7,83,13,13,0
+	LTEXT		"点这里指定选择包含你想要使用的文件目录。",102,26,83,132,18,WS_GROUP
+	DEFPUSHBUTTON	"确定",1,52,108,50,14,0
+	PUSHBUTTON	"取消",2,108,108,50,14,0
+	SCROLLBAR	103,7,112,10,10,0
+END
+
+108 DIALOGEX 0,0,172,66
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "添加到收藏夹"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"输入新收藏夹项目的名称:",-1,7,7,158,8,WS_GROUP
+	EDITTEXT	100,7,22,158,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,59,45,50,14,WS_DISABLED
+	PUSHBUTTON	"取消",2,115,45,50,14,0
+END
+
+109 DIALOGEX 0,0,180,134
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "打开最近使用的文件"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_AUTOHSCROLL | CBS_LOWERCASE,7,7,166,80
+	CONTROL	"退出时保存最近使用的文件(&S)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,95,96,10
+	DEFPUSHBUTTON	"确定",1,67,113,50,14,WS_DISABLED
+	PUSHBUTTON	"取消",2,123,113,50,14,0
+	SCROLLBAR	101,7,117,10,10,0
+END
+
+110 DIALOGEX 0,0,184,65
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "文件更改通知"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"禁用(&N).",100,"Button",WS_TABSTOP | WS_GROUP | BS_AUTORADIOBUTTON,7,7,35,10
+	CONTROL	"提示文件更改(&D).",101,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,19,71,10
+	CONTROL	"自动加载(&A).",102,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,31,99,10
+	CONTROL	"如果打开新文件则恢复(&R).",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,48,109,10
+	DEFPUSHBUTTON	"确定",1,127,7,50,14,0
+	PUSHBUTTON	"取消",2,127,24,50,14,0
+END
+
+111 DIALOGEX 0,0,182,110
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "修改行"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"追加到行首的文本(&P):",-1,7,7,62,8,WS_GROUP
+	EDITTEXT	100,7,18,98,14,WS_BORDER | ES_AUTOHSCROLL
+	LTEXT		"追加到行末的文本(&A):",-1,7,37,68,8,WS_GROUP
+	EDITTEXT	101,7,48,98,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,125,7,50,14,0
+	PUSHBUTTON	"取消",2,125,24,50,14,0
+	LTEXT		"$$(L)",200,7,72,14,8,WS_GROUP
+	LTEXT		"$$(0L)",201,30,72,18,8,WS_GROUP
+	LTEXT		"文件行号",-1,57,72,74,8,WS_GROUP
+	LTEXT		"$$(N)",202,7,82,15,8,WS_GROUP
+	LTEXT		"$$(0N)",203,30,82,19,8,WS_GROUP
+	LTEXT		"连续号码",-1,57,82,66,8,WS_GROUP
+	LTEXT		"$$(I)",204,7,92,13,8,WS_GROUP
+	LTEXT		"$$(0I)",205,30,92,17,8,WS_GROUP
+	LTEXT		"连续号码(从0开始).",-1,57,92,109,8,WS_GROUP
+END
+
+112 DIALOGEX 0,0,184,74
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "行排列"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"靠左",100,"Button",WS_TABSTOP | WS_GROUP | BS_AUTORADIOBUTTON,7,7,31,10
+	CONTROL	"靠右",101,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,19,35,10
+	CONTROL	"居中",102,"Button",BS_AUTORADIOBUTTON,7,31,41,10
+	CONTROL	"对正",103,"Button",BS_AUTORADIOBUTTON,7,43,40,10
+	CONTROL	"对正(段落模式).",104,"Button",BS_AUTORADIOBUTTON,7,55,100,10
+	DEFPUSHBUTTON	"确定",1,127,7,50,14,0
+	PUSHBUTTON	"取消",2,127,24,50,14,0
+END
+
+113 DIALOGEX 0,0,182,70
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "在选定区域前/后插入文本"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"在选定区域前插入(&B):",-1,7,7,76,8,WS_GROUP
+	EDITTEXT	100,7,18,98,14,WS_BORDER | ES_AUTOHSCROLL
+	LTEXT		"在选定区域后插入(&A):",-1,7,37,71,8,WS_GROUP
+	EDITTEXT	101,7,48,98,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,125,7,50,14,0
+	PUSHBUTTON	"取消",2,125,24,50,14,0
+END
+
+114 DIALOGEX 0,0,182,70
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "插入 HTML/XML 标记"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"起始标记(&O) (包含属性):",-1,7,7,97,8,WS_GROUP
+	EDITTEXT	100,7,18,98,14,WS_BORDER | ES_AUTOHSCROLL
+	LTEXT		"结束标记(&C) (可以被编辑):",-1,7,37,90,8,WS_GROUP
+	EDITTEXT	101,7,48,98,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,125,7,50,14,0
+	PUSHBUTTON	"取消",2,125,24,50,14,0
+END
+
+115 DIALOGEX 0,0,184,140
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "行排序"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"升序(&A)",100,"Button",WS_TABSTOP | WS_GROUP | BS_AUTORADIOBUTTON,7,7,66,10
+	CONTROL	"降序(&D)",101,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,19,70,10
+	CONTROL	"混乱行(&F)",102,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,31,57,10
+	CONTROL	"合并重复行(&M)",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,50,85,10
+	CONTROL	"移除重复行(&R)",104,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,62,91,10
+	CONTROL	"移除不同的行(&U)",105,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,74,84,10
+	CONTROL	"不区分大小写(&C)",106,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,92,70,10
+	CONTROL	"逻辑数字比较(&N)",107,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,104,104,10
+	CONTROL	"矩形选区列排序(&S)",108,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,122,131,10
+	DEFPUSHBUTTON	"确定",1,127,7,50,14,0
+	PUSHBUTTON	"取消",2,127,24,50,14,0
+END
+
+116 DIALOGEX 0,0,130,47
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "列换行"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"界限(&B):",-1,7,7,34,8,WS_GROUP
+	EDITTEXT	100,7,24,46,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,73,7,50,14,0
+	PUSHBUTTON	"取消",2,73,24,50,14,0
+END
+
+117 DIALOGEX 0,0,186,47
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "转到"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"行(&L):",-1,7,7,16,8,WS_GROUP
+	EDITTEXT	100,7,24,46,14,WS_BORDER | ES_AUTOHSCROLL
+	LTEXT		"列(&C):",-1,63,7,27,8,WS_GROUP
+	EDITTEXT	101,63,24,46,14,WS_BORDER | ES_AUTOHSCROLL
+	DEFPUSHBUTTON	"确定",1,129,7,50,14,0
+	PUSHBUTTON	"取消",2,129,24,50,14,0
+END
+
+118 DIALOGEX 0,0,272,101
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME | DS_NOFAILCREATE
+CAPTION "查找文本"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"搜索字符串(&G):",-1,7,7,46,8,WS_GROUP
+	COMBOBOX	100,7,17,192,116,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWN | CBS_AUTOHSCROLL
+	CONTROL	"区分大小写(&C)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,37,53,10
+	CONTROL	"全字符匹配(&W)",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,49,89,10
+	CONTROL	"仅匹配单词开头部分(&B)",104,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,61,110,10
+	CONTROL	"正则表达式(&E)",105,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,73,96,10
+	CONTROL	"对反斜杠“\”进行转义(&T)",106,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,85,85,10
+	CONTROL	"禁止循环搜索(&D)",107,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,37,75,10
+	CONTROL	"在查找后关闭(&L)",108,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,49,65,10
+	DEFPUSHBUTTON	"向下搜索(&F)",1,215,7,50,14,0
+	PUSHBUTTON	"向上搜索(&P)",109,215,24,50,14,0
+	PUSHBUTTON	"关闭",2,215,41,50,14,0
+	CONTROL	"<a>转到替换(Ctrl+H)</a>",115,"SysLink",0,125,85,74,10
+	CONTROL	"<a>(?)</a>",152,"SysLink",0,106,73,14,10
+	CONTROL	"<a>(?)</a>",151,"SysLink",0,106,85,14,10
+	CONTROL	"通配符搜索(&I)",154,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,61,63,10
+	CONTROL	"<a>(?)</a>",153,"SysLink",0,191,61,14,10
+END
+
+119 DIALOGEX 0,0,272,130
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME | DS_NOFAILCREATE
+CAPTION "替换文本"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"搜索字符串(&G):",-1,7,7,46,8,WS_GROUP
+	COMBOBOX	100,7,17,192,116,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWN | CBS_AUTOHSCROLL
+	LTEXT		"替换为(&H):",-1,7,35,44,8,WS_GROUP
+	COMBOBOX	101,7,46,192,116,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWN | CBS_AUTOHSCROLL
+	CONTROL	"区分大小写(&C)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,66,53,10
+	CONTROL	"全字符匹配(&W)",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,78,89,10
+	CONTROL	"仅匹配单词开头部分(&B)",104,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,90,110,10
+	CONTROL	"正则表达式(&E)",105,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,102,98,10
+	CONTROL	"对反斜杠“\”进行转义(&T)",106,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,114,86,10
+	CONTROL	"禁止循环搜索(&D)",107,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,66,75,10
+	CONTROL	"在替换后关闭(&L)",108,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,78,77,10
+	DEFPUSHBUTTON	"向下搜索(&F)",1,215,7,50,14,0
+	PUSHBUTTON	"向上搜索(&P)",109,215,24,50,14,0
+	PUSHBUTTON	"替换(&R)",112,215,41,50,14,0
+	PUSHBUTTON	"替换全部(&A)",113,215,58,50,14,0
+	PUSHBUTTON	"选区替换(&S)",114,215,75,50,14,0
+	PUSHBUTTON	"关闭",2,215,92,50,14,0
+	CONTROL	"<a>转到查找(Ctrl+F)</a>",115,"SysLink",0,125,114,74,10
+	CONTROL	"<a>(?)</a>",152,"SysLink",0,107,102,14,10
+	CONTROL	"<a>(?)</a>",151,"SysLink",0,107,114,14,10
+	CONTROL	"通配符搜索(&I)",154,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,125,90,63,10
+	CONTROL	"<a>(?)</a>",153,"SysLink",0,191,90,14,10
+END
+
+120 DIALOGEX 0,0,165,134
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "选择方案"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"",100,"SysListView32",WS_TABSTOP | WS_BORDER | CBS_SIMPLE | CBS_SORT | CBS_AUTOHSCROLL | CBS_LOWERCASE,7,7,151,70
+	CONTROL	"设置选定的方案为默认(&D)",101,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,85,118,10
+	CONTROL	"按文件名称扩展名自动选择(&A)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,95,127,10
+	DEFPUSHBUTTON	"确定",1,53,113,50,14,WS_DISABLED
+	PUSHBUTTON	"取消",2,108,113,50,14,0
+	SCROLLBAR	103,7,117,10,10,0
+END
+
+121 DIALOGEX 0,0,468,238
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "自定义方案"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	CONTROL	"",100,"SysTreeView32",WS_TABSTOP | WS_BORDER | CBS_NOINTEGRALHEIGHT,7,7,164,224
+	LTEXT		"",101,181,140,280,8,WS_GROUP
+	EDITTEXT	102,181,152,280,15,WS_BORDER | ES_AUTOHSCROLL
+	PUSHBUTTON	"前景(&E)",103,181,174,46,14,0
+	PUSHBUTTON	"背景(&B)",104,232,174,46,14,0
+	PUSHBUTTON	"字体(&F)",105,283,174,42,14,0
+	PUSHBUTTON	"预览(&P)",106,330,174,42,14,0
+	PUSHBUTTON	"重置(&R)",107,377,174,42,14,0
+	PUSHBUTTON	"",108,426,174,15,14,0
+	PUSHBUTTON	"",109,446,174,15,14,0
+	PUSHBUTTON	"导入(&I)",110,181,217,50,14,0
+	PUSHBUTTON	"导出(&X)",111,237,217,50,14,0
+	DEFPUSHBUTTON	"确定",1,355,217,50,14,0
+	PUSHBUTTON	"取消",2,411,217,50,14,0
+	GROUPBOX	"信息",-1,181,7,280,127,0
+	ICON		102,-1,189,19,20,20,0
+	LTEXT		"自定义方案",112,220,25,200,12,WS_GROUP
+	LTEXT		"文件名称扩展名必须使用“;”符号分割。$0A$0A样式格式:$0Afont:name;size:nn;bold;italic;underline;fore:#ffffff;back:#bbbbbb;eolfilled$0A$0A你可以使用复制与粘贴或者拖曳来复制样式属性。$0A$0A“预览”按钮将不会应用任何更改。",-1,197,50,252,70,WS_GROUP
+	LTEXT		"关联的文件扩展名:|样式设置(&S):",113,315,230,152,8,NOT WS_VISIBLE | WS_GROUP
+END
+
+122 DIALOGEX 0,0,196,100
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "自动换行设置"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	COMBOBOX	100,7,7,182,196,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	COMBOBOX	101,7,24,182,196,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	COMBOBOX	102,7,41,182,196,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	COMBOBOX	103,7,58,182,196,WS_TABSTOP | WS_VSCROLL | CBS_DROPDOWNLIST
+	DEFPUSHBUTTON	"确定",1,83,79,50,14,0
+	PUSHBUTTON	"取消",2,139,79,50,14,0
+	LTEXT		"无|1个字符|2个字符|1个缩进|2个缩进|作为第一个子行| + 1缩进",200,0,0,615,8,NOT WS_VISIBLE | WS_GROUP
+	LTEXT		"无|行尾|临近边缘",201,0,0,418,8,NOT WS_VISIBLE | WS_GROUP
+	LTEXT		"无|行尾|临近边缘",202,0,0,402,8,NOT WS_VISIBLE | WS_GROUP
+	LTEXT		"单词换行|任意符号换行",203,0,0,187,8,NOT WS_VISIBLE | WS_GROUP
+END
+
+123 DIALOGEX 0,0,184,55
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "行标记设置"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"限制行的长度为(&L):",-1,7,10,60,8,WS_GROUP
+	EDITTEXT	100,77,7,30,14,WS_BORDER | ES_AUTOHSCROLL
+	CONTROL	"显示边缘分隔线(&E)",101,"Button",WS_TABSTOP | WS_GROUP | BS_AUTORADIOBUTTON,7,27,67,10
+	CONTROL	"更改背景颜色(&B)",102,"Button",WS_TABSTOP | BS_AUTORADIOBUTTON,7,38,100,10
+	DEFPUSHBUTTON	"确定",1,127,7,50,14,0
+	PUSHBUTTON	"取消",2,127,24,50,14,0
+END
+
+124 DIALOGEX 0,0,174,90
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "制表符设置"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	LTEXT		"制表符宽度(&T):",-1,7,10,54,8,WS_GROUP
+	EDITTEXT	100,67,7,30,14,WS_BORDER | ES_AUTOHSCROLL
+	LTEXT		"缩进大小(&I):",-1,7,30,55,8,WS_GROUP
+	EDITTEXT	101,67,27,30,14,WS_BORDER | ES_AUTOHSCROLL
+	CONTROL	"使用空格代替插入制表符(&S)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,47,87,10
+	CONTROL	"Tab键格式化缩进(&K).",103,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,59,115,10
+	CONTROL	"Backspace键格式化缩进(&B)",104,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,71,137,10
+	DEFPUSHBUTTON	"确定",1,117,7,50,14,0
+	PUSHBUTTON	"取消",2,117,24,50,14,0
+END
+
+125 DIALOGEX 5,5,356,260
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "页面设置"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	GROUPBOX	"纸张",1073,8,8,224,56,WS_GROUP
+	LTEXT		"大小(&Z):",1089,16,24,36,8,WS_GROUP
+	COMBOBOX	1137,64,23,160,160,WS_TABSTOP | WS_GROUP | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_SORT
+	LTEXT		"来源(&S):",1090,16,45,36,8,WS_GROUP
+	COMBOBOX	1138,64,42,160,160,WS_TABSTOP | WS_GROUP | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_SORT
+	GROUPBOX	"方向",1072,8,69,64,56,WS_GROUP
+	CONTROL	"纵向(&O)",1056,"Button",WS_TABSTOP | WS_GROUP | BS_AUTORADIOBUTTON,16,82,52,12
+	CONTROL	"横向(&A)",1057,"Button",BS_AUTORADIOBUTTON,16,103,52,12
+	GROUPBOX	"页边空白",1075,80,69,152,56,WS_GROUP
+	LTEXT		"左(&L):",1102,88,85,32,8,WS_GROUP
+	EDITTEXT	1155,120,82,28,12,WS_BORDER | WS_GROUP
+	LTEXT		"上(&T):",1104,88,104,32,8,WS_GROUP
+	EDITTEXT	1156,120,103,28,12,WS_BORDER | WS_GROUP
+	LTEXT		"右(&R):",1103,164,85,32,8,WS_GROUP
+	EDITTEXT	1157,196,82,28,12,WS_BORDER | WS_GROUP
+	LTEXT		"下(&B):",1105,164,104,32,8,WS_GROUP
+	EDITTEXT	1158,196,103,28,12,WS_BORDER | WS_GROUP
+	GROUPBOX	"页眉与页脚",1074,8,130,224,56,WS_GROUP
+	LTEXT		"页眉(&H):",-1,16,146,36,8,WS_GROUP
+	COMBOBOX	32,64,145,160,160,WS_TABSTOP | WS_GROUP | WS_VSCROLL | CBS_DROPDOWNLIST
+	LTEXT		"页脚(&F):",-1,16,167,36,8,WS_GROUP
+	COMBOBOX	33,64,164,160,160,WS_TABSTOP | WS_GROUP | WS_VSCROLL | CBS_DROPDOWNLIST
+	GROUPBOX	"打印颜色",1076,8,191,224,37,WS_GROUP
+	LTEXT		"模式(&D):",-1,16,207,36,8,WS_GROUP
+	COMBOBOX	34,64,206,160,160,WS_TABSTOP | WS_GROUP | WS_VSCROLL | CBS_DROPDOWNLIST
+	GROUPBOX	"缩放",-1,240,170,108,58,WS_GROUP
+	LTEXT		"打印缩放(&M) (-10 - +20):",-1,248,188,92,8,WS_GROUP
+	EDITTEXT	30,298,206,42,12,WS_BORDER | ES_AUTOHSCROLL
+	CONTROL	"",31,"msctls_updown32",CBS_DROPDOWN | CBS_OWNERDRAWFIXED | CBS_SORT,282,205,11,14
+	DEFPUSHBUTTON	"确定",1,190,237,50,14,WS_GROUP
+	PUSHBUTTON	"取消",2,244,237,50,14,0
+	PUSHBUTTON	"打印机(&P)",1026,298,237,50,14,0
+	GROUPBOX	"预览",-1,240,8,108,157,0
+	CONTROL	"",1080,"Static",SS_WHITERECT,254,47,80,80
+	CONTROL	"",1081,"Static",SS_GRAYRECT,334,51,4,80
+	CONTROL	"",1082,"Static",SS_GRAYRECT,262,123,80,4
+END
+
+126 DIALOGEX 0,0,244,71
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "Notepad2-mod"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	ICON		100,100,7,7,21,20,0
+	LTEXT		"",101,35,7,202,34,WS_GROUP
+	DEFPUSHBUTTON	"确定",1,187,50,50,14,0
+	CONTROL	"不再显示该信息(&D)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,54,122,10
+END
+
+127 DIALOGEX 0,0,244,71
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "Notepad2-mod"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	ICON		100,100,7,7,21,20,0
+	LTEXT		"",101,35,7,202,34,WS_GROUP
+	PUSHBUTTON	"是(&Y)",6,131,50,50,14,0
+	PUSHBUTTON	"否(&N)",7,187,50,50,14,0
+	CONTROL	"不再显示该信息(&D)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,54,122,10
+END
+
+128 DIALOGEX 0,0,244,71
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | DS_FIXEDSYS | DS_MODALFRAME
+CAPTION "Notepad2-mod"
+FONT 8, "MS Shell Dlg"
+BEGIN
+	ICON		100,100,7,7,21,20,0
+	LTEXT		"",101,35,7,202,34,WS_GROUP
+	DEFPUSHBUTTON	"确定",1,131,50,50,14,0
+	PUSHBUTTON	"取消",2,187,50,50,14,0
+	CONTROL	"不再显示此对话框(&D)",102,"Button",WS_TABSTOP | BS_AUTOCHECKBOX,7,54,122,10
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	10000	"Notepad2-mod"
+	10001	"%s (管理员)"
+	10002	"Notepad2-mod: 粘贴板"
+	10003	"无标题"
+	10004	"\"%s\""
+	10005	"(只读)"
+	10006	"行 %s : %s   列 %s   选定 %s"
+	10007	"行 %s : %s   列 %s : %s   选定 %s"
+	10008	"%s"
+	10009	"正在载入“%s”..."
+	10010	"正在保存“%s”..."
+	10011	"正在打印页面 %i..."
+	10012	"正在保存设置..."
+	10013	"使用 Notepad2-mod 编辑"
+	10014	"所有文件 (*.*)|*.*|"
+	10015	"可执行文件 (*.exe;*.com;*.bat;*.lnk;*.pif)|*.exe;*.com;*.bat;*.lnk;*.pif|所有文件 (*.*)|*.*|"
+	10016	"配置文件 (*.ini)|*.ini|所有文件 (*.*)|*.*|"
+	10017	"选择包含你想要使用的应用程序的目录。"
+	10018	"选择包含你想要使用的文件的目录。"
+	10019	"反斜杠转换\n\n\\a\t提醒 (BEL, Ascii 7)\n\\b\t退格 (BS, Ascii 8)\n\\f\t换页 (FF, Ascii 12)\n\\n\t换行 (LF, Ascii 10)\n\\r\t回车(CR, Ascii 13)\n\\t\t水平制表符 (HT, Ascii 9)\n\\v\t垂直制表符 (VT, Ascii 11)\n\\ooo\t八进制值\n\\u####\t十六进制值\n\\xhh\t十六进制值\n\\\\\t反斜杠"
+	10020	"正则表达式(仅单行)\n\n.\t 任何字符\n^\t 以行开始\n$\t以行结束\n\\<\t以单词开始\n\\>\t以单词结束\n[...]\t字符集([abc]) 或者范围 ([a-z])\n[^...]\t字符不设定范围\n\\d\t任何十进制数字\n\\D\t任何非十进制数字\n\\s\t任何空白字符\n\\S\t非空白字符\n\\w\t任意"word\" 字符\n\\W\t任意非 \"word\" 字符\n\\x\t其他特殊含义的转义字符\n\\xHH\t16进制字符代码\n?\t匹配前面的0或1次\n*\t0次或多次匹配前面的\n+\t1次或多次匹配前面的\n*? 或者 +?\t非贪婪匹配量词 \"?\" 和 \"+\"\n(\t区域开始\t区域结束\n\\n\t替换时指定区域(n 是 1-9)\n"
+	10021	"通配符搜索\n\n*\t匹配零个或多个字符\n?\t匹配一个字符 "
+	40700	"新建"
+	40701	"打开"
+	40702	"浏览"
+	40703	"保存"
+	40704	"撤消"
+	40705	"重做"
+	40706	"剪切"
+	40707	"复制"
+	40708	"粘贴"
+	40709	"查找"
+	40710	"替换"
+	40711	"自动换行"
+	40712	"放大"
+	40713	"缩小"
+	40714	"选择方案"
+	40715	"自定义方案"
+	40716	"退出"
+	40717	"保存为"
+	40718	"保存副本"
+	40719	"清除"
+	40720	"打印"
+	40721	"收藏夹"
+	40722	"添加到收藏夹"
+	40723	"切换所有的折叠"
+	40724	"执行文件"
+	40800	"&保存位置\tCtrl+O"
+	40801	"&重置位置\tCtrl+P"
+	50000	"载入'%s'时出错。"
+	50001	"保存'%s'时出错。"
+	50002	"未找到文件浏览器插件。你可以访问 http://www.flos-freeware.ch 下载 metapath 文件浏览器插件。"
+	50003	"无法访问选定的文件!\n你想要从列表中移除该文件吗?"
+	50004	"创建桌面快捷方式时出错。"
+	50005	"当前的 Notepad2-mod 窗口正忙或者正在显示一个活动的对话框。\n你想要打开其他的 Notepad2-mod 窗口吗?"
+	50006	"无法在一个矩形选区中执行该操作。"
+	50007	"此操作不能执行 (你的行太长了)。"
+	50008	"到达文档结束位置。\r\n正在重新从起始位置开始搜索。"
+	50009	"到达文档起始位置。\r\n正在重新从结束位置开始搜索。"
+	50010	"未找到指定的文本。"
+	50011	"已对您指定的文本执行了 %i 次替换。"
+	50012	"将文件编码从 ANSI 切换为 non-ANSI (反之亦然)时可能会使用默认字符替换不支持的文本，并且撤消历史将会被清空。你想要继续吗?"
+	50013	"你准备要更改一个空白文件的编码。注意，由于撤消历史无法与新的编码进行同步，所以这将会清空撤消历史。你想要继续吗?"
+	50014	"你所选编码方式在系统中不可用."
+	50015	"转换该 Unicode 文件时出现错误。\n如果文件被保存，那么数据将会丢失!"
+	50016	"当前文件包含你所选编码不支持的字符，保存时将用默认的占位符替换，你想要继续吗?"
+	50017	"你确定你想要打开这个大文件吗?"
+	50018	"一次仅可以拖曳一个文件!"
+	50019	"保存更改到“%s”吗?"
+	50020	"恢复文件到最后一次保存的状态吗? 你的更改将会全部丢失!"
+	50021	"更改编码方式要求重新加载文件, 你的更改将会全部丢失!"
+	50022	"未找到“%s”。\n你想要创建该文件吗?"
+	50023	"文件名称、当前日期与时间|文件名称、当前日期|文件名称|留空"
+	50024	"页号|留空"
+	50025	"标准|反转颜色|白色背景、黑字文字|白色背景、彩色文字|白色背景、彩色文字 (行号除外)"
+	50026	"第 %i 页"
+	50027	"该文档未包含任何要打印的文本。"
+	50028	"打印“%s”时出错!"
+	50029	"已在收藏夹目录中为当前文件创建了一个快捷方式。"
+	50030	"无法为当前文件创建快捷方式。\n请检查是否有其他文件与该文件同名。"
+	50031	"无法修改“%s”的属性。"
+	50032	"“%s”是只读文件。保存为其他文件吗?"
+	50033	"当前文件已被其他外部程序修改。你想要重新载入该文件吗?"
+	50034	"当前文件已被删除。你想要立即保存该文件吗?"
+	50035	"保存窗口位置已启用。任何新的 Notepad2-mod 窗口将会使用当前窗口的位置设置。"
+	50036	"当前程序的设置已被保存。"
+	50037	"创建配置文件时发生错误."
+	50038	"无法写配置文件(文件只读?)."
+	50039	"没有被发现配置文件. \n为了保持您修改的样式,现在保存设置(F7)或回到计划配置到( Ctrl + F12键),并输出口您的风格."
+	50040	"导出样式设置到“%s”错误"
+	60000	"命令行帮助\n\n文件\t必须是最后一个参数, 默认是没有引用空间的。\n+\t开启多文件参数 (含引用空间)。\n-\t开启但文件参数 (不含引用空间)。\n…\t编码 (/ansi, /unicode, /unicodebe, /utf8, /utf8sig)。\n…\t行结束模式 (/crlf, /lf, /cr)。\n/e\t文件源码编码.\n/g\t转到指定位置 (/g -1 表示文件结尾)。\n/m\t匹配特定文本 (/m- 最大, /mr 正则表达式, /mb 反斜杠符号).\n/l\t自动载入修改的文件。\n/q\t无提示强制创建新文件。\n/s\t选择指定语法方案。\n/d\t选择默认文本方案。\n/h\t选择网页源代码方案。\n/x\t选择 XML 文档方案。\n/c\t打开新窗口并粘贴剪贴板中的内容。\n/b\t打开新窗口并监视剪贴板中的内容。\n/n\t总是打开一个新窗口 (/ns 单一文件实例).\n/r\t恢复窗口(/rs 单一文件实例).\n/p\t设置窗口位置与大小 (/p0 , /ps, /pf,l,t,r,b,m)。\n/t\t设置窗口标题。\n/i\t在系统托盘中启动。\n/o\t保持窗口置顶。\n/f\tt指定 ini 文件 (/f0 不使用 ini 文件)。\n/u\t以管理员身份运行。\n/z\t跳过下一步 (基于注册表替换Notepad)。"
+	61000	"A0;ANSI;ANSI"
+	61001	"A1;OEM;OEM"
+	61002	"A2;Unicode (UTF-16 LE BOM);Unicode BOM"
+	61003	"A3;Unicode (UTF-16 BE BOM);Unicode BE BOM"
+	61004	"A4;Unicode (UTF-16 LE);Unicode"
+	61005	"A5;Unicode (UTF-16 BE);Unicode BE"
+	61006	"A6;UTF-8;UTF-8"
+	61007	"A7;UTF-8 Signature;UTF-8 Signature"
+	61008	"A8;UTF-7;UTF-7"
+	61009	"C;Arabic (DOS-720);DOS-720"
+	61010	"C;Arabic (ISO-8859-6);ISO-8859-6"
+	61011	"C;Arabic (Mac);Mac (Arabic)"
+	61012	"C;Arabic (Windows-1256);Windows-1256"
+	61013	"C;Baltic (DOS-775);DOS-775"
+	61014	"C;Baltic (ISO-8859-4);ISO-8859-4"
+	61015	"C;Baltic (Windows-1257);Windows-1257"
+	61016	"C;Central European (DOS-852);DOS-852"
+	61017	"C;Central European (ISO-8859-2);ISO-8859-2"
+	61018	"C;Central European (Mac);Mac (Central)"
+	61019	"C;Central European (Windows-1250);Windows-1250"
+	61020	"C;Chinese Simplified (GBK);GBK"
+	61021	"C;Chinese Simplified (Mac);Mac (zh-cn)"
+	61022	"C;Chinese Traditional (Big5);Big5"
+	61023	"C;Chinese Traditional (Mac);Mac (zh-tw)"
+	61024	"C;Croatian (Mac);Mac (Croatian)"
+	61025	"C;Cyrillic (DOS-866);DOS-866"
+	61026	"C;Cyrillic (ISO-8859-5);ISO-8859-5"
+	61027	"C;Cyrillic (KOI8-R);KOI8-R"
+	61028	"C;Cyrillic (KOI8-U);KOI8-U"
+	61029	"C;Cyrillic (Mac);Mac (Cyrillic)"
+	61030	"C;Cyrillic (Windows-1251);Windows-1251"
+	61031	"C;Estonian (ISO-8859-13);ISO-8859-13"
+	61032	"C;French Canadian (DOS-863);DOS-863"
+	61033	"C;Greek (DOS-737);DOS-737"
+	61034	"C;Greek (ISO-8859-7);ISO-8859-7"
+	61035	"C;Greek (Mac);Mac (Greek)"
+	61036	"C;Greek (Windows-1253);Windows-1253"
+	61037	"C;Greek, Modern (DOS-869);DOS-869"
+	61038	"C;Hebrew (DOS-862);DOS-862"
+	61039	"C;Hebrew (ISO-8859-8-I);ISO-8859-8-I"
+	61040	"C;Hebrew (ISO-8859-8);ISO-8859-8"
+	61041	"C;Hebrew (Mac);Mac (Hebrew)"
+	61042	"C;Hebrew (Windows-1255);Windows-1255"
+	61043	"C;Icelandic (DOS-861);DOS-861"
+	61044	"C;Icelandic (Mac);Mac (Icelandic)"
+	61045	"C;Japanese (Mac);Mac (Japanese)"
+	61046	"C;Japanese (Shift-JIS);Shift-JIS"
+	61047	"C;Korean (Mac);Mac (Korean)"
+	61048	"C;Korean (Windows-949);Windows-949"
+	61049	"C;Latin 3 (ISO-8859-3);ISO-8859-3"
+	61050	"C;Latin 9 (ISO-8859-15);ISO-8859-15"
+	61051	"C;Nordic (DOS-865);DOS-865"
+	61052	"C;OEM United States (DOS-437);DOS-437"
+	61053	"C;OEM Multilingual Latin 1 (DOS-858);DOS-858"
+	61054	"C;Portuguese (DOS-860);DOS-860"
+	61055	"C;Romanian (Mac);Mac (Romanian)"
+	61056	"C;Thai (Mac);Mac (Thai)"
+	61057	"C;Thai (Windows-874);Windows-874"
+	61058	"C;Turkish (DOS-857);DOS-857"
+	61059	"C;Turkish (ISO-8859-9);ISO-8859-9"
+	61060	"C;Turkish (Mac);Mac (Turkish)"
+	61061	"C;Turkish (Windows-1254);Windows-1254"
+	61062	"C;Ukrainian (Mac);Mac (Ukrainian)"
+	61063	"C;Vietnamese (Windows-1258);Windows-1258"
+	61064	"B;Western European (DOS-850);DOS-850"
+	61065	"B;Western European (ISO-8859-1);ISO-8859-1"
+	61066	"B;Western European (Mac);Mac (Western)"
+	61067	"B;Western European (Windows-1252);Windows-1252"
+	61068	"D0;IBM EBCDIC (US-Canada);EBCDIC (US)"
+	61069	"D1;IBM EBCDIC (International);EBCDIC (Int.)"
+	61070	"D2;IBM EBCDIC (Greek Modern);EBCDIC (GR)"
+	61071	"D3;IBM EBCDIC (Turkish Latin-5);EBCDIC (Latin-5)"
+	61072	"C;Chinese Simplified (GB18030);GB18030"
+	62000	"Windows (CR+LF)"
+	62001	"Unix (LF)"
+	62002	"Mac (CR)"
+	63000	"Default Text"
+	63001	"Web Source Code"
+	63002	"XML Document"
+	63003	"CSS Style Sheets"
+	63004	"C/C++ Source Code"
+	63005	"C# Source Code"
+	63006	"Resource Script"
+	63007	"Makefiles"
+	63008	"VBScript"
+	63009	"Visual Basic"
+	63010	"JavaScript"
+	63011	"Java Source Code"
+	63012	"Pascal Source Code"
+	63013	"Assembly Script"
+	63014	"Perl Script"
+	63015	"Configuration Files"
+	63016	"Batch Files"
+	63017	"Diff Files"
+	63018	"SQL Query"
+	63019	"Python Script"
+	63020	"Apache Config Files"
+	63021	"PowerShell Script"
+	63100	"Default Style"
+	63101	"Margins and Line Numbers"
+	63102	"Matching Braces"
+	63103	"Matching Braces Error"
+	63104	"Control Characters (Font)"
+	63105	"Indentation Guide (Color)"
+	63106	"Selected Text (Colors)"
+	63107	"Whitespace (Colors, Size 0-5)"
+	63108	"Current Line Background (Color)"
+	63109	"Caret (Color, Size 1-3)"
+	63110	"Long Line Marker (Colors)"
+	63111	"Extra Line Spacing (Size)"
+	63112	"2nd Default Style"
+	63113	"2nd Margins and Line Numbers"
+	63114	"2nd Matching Braces"
+	63115	"2nd Matching Braces Error"
+	63116	"2nd Control Characters (Font)"
+	63117	"2nd Indentation Guide (Color)"
+	63118	"2nd Selected Text (Colors)"
+	63119	"2nd Whitespace (Colors, Size 0-5)"
+	63120	"2nd Current Line Background (Color)"
+	63121	"2nd Caret (Color, Size 1-3)"
+	63122	"2nd Long Line Marker (Colors)"
+	63123	"2nd Extra Line Spacing (Size)"
+	63126	"Default"
+	63127	"Comment"
+	63128	"Keyword"
+	63129	"Identifier"
+	63130	"Number"
+	63131	"String"
+	63132	"Operator"
+	63133	"Preprocessor"
+	63134	"Verbatim String"
+	63135	"Regex"
+	63136	"HTML Tag"
+	63137	"HTML Unknown Tag"
+	63138	"HTML Attribute"
+	63139	"HTML Unknown Attribute"
+	63140	"HTML Value"
+	63141	"HTML String"
+	63142	"HTML Other Inside Tag"
+	63143	"HTML Comment"
+	63144	"HTML Entity"
+	63145	"XML Identifier"
+	63146	"ASP Start Tag"
+	63147	"CDATA"
+	63148	"PHP Start Tag"
+	63149	"PHP Default"
+	63150	"PHP String"
+	63151	"PHP Simple String"
+	63152	"PHP Keyword"
+	63153	"PHP Number"
+	63154	"PHP Variable"
+	63155	"PHP String Variable"
+	63156	"PHP Complex Variable"
+	63157	"PHP Comment"
+	63158	"PHP Operator"
+	63159	"JS Default"
+	63160	"JS Comment"
+	63161	"JS Number"
+	63162	"JS Identifier"
+	63163	"JS Keyword"
+	63164	"JS String"
+	63165	"JS Symbols"
+	63166	"JS Regex"
+	63167	"ASP JS Default"
+	63168	"ASP JS Comment"
+	63169	"ASP JS Number"
+	63170	"ASP JS Identifier"
+	63171	"ASP JS Keyword"
+	63172	"ASP JS String"
+	63173	"ASP JS Symbols"
+	63174	"ASP JS Regex"
+	63175	"VBS Default"
+	63176	"VBS Comment"
+	63177	"VBS Number"
+	63178	"VBS Keyword"
+	63179	"VBS String"
+	63180	"VBS Identifier"
+	63181	"ASP VBS Default"
+	63182	"ASP VBS Comment"
+	63183	"ASP VBS Number"
+	63184	"ASP VBS Keyword"
+	63185	"ASP VBS String"
+	63186	"ASP VBS Identifier"
+	63187	"XML Tag"
+	63188	"XML Attribute"
+	63189	"XML Value"
+	63190	"XML String"
+	63191	"XML Other Inside Tag"
+	63192	"XML Comment"
+	63193	"XML Entity"
+	63194	"Tag-Class"
+	63195	"Tag-Id"
+	63196	"Tag-Attribute"
+	63197	"Pseudo-class"
+	63198	"Unknown Pseudo-class"
+	63199	"CSS Property"
+	63200	"Unknown Property"
+	63201	"Value"
+	63202	"Important"
+	63203	"Directive"
+	63204	"Target"
+	63205	"Inline Asm"
+	63206	"CPU Instruction"
+	63207	"FPU Instruction"
+	63208	"Register"
+	63209	"Directive Operand"
+	63210	"Extended Instruction"
+	63211	"String double quoted"
+	63212	"String single quoted"
+	63213	"POD (common)"
+	63214	"POD (verbatim)"
+	63215	"Scalar $var"
+	63216	"Array @var"
+	63217	"Hash %var"
+	63218	"Symbol table *var"
+	63219	"Regex /re/ or m{re}"
+	63220	"Substitution s/re/ore/"
+	63221	"Back ticks"
+	63222	"Data section"
+	63223	"Here-doc (delimiter)"
+	63224	"Here-doc (single quoted, q)"
+	63225	"Here-doc (double quoted, qq)"
+	63226	"Here-doc (back ticks, qx)"
+	63227	"Single quoted string (generic, q)"
+	63228	"Double quoted string (qq)"
+	63229	"Back ticks (qx)"
+	63230	"Regex (qr)"
+	63231	"Array (qw)"
+	63232	"Section"
+	63233	"Assignment"
+	63234	"Default Value"
+	63235	"Label"
+	63236	"Command"
+	63237	"SGML"
+	63238	"Source and Destination"
+	63239	"Position Setting"
+	63240	"Line Addition"
+	63241	"Line Removal"
+	63242	"Line Change"
+	63243	"Quoted Identifier"
+	63244	"String triple double quotes"
+	63245	"String triple single quotes"
+	63246	"Class name"
+	63247	"Function name"
+	63248	"IP Address"
+	63249	"Variable"
+	63250	"Cmdlet"
+	63251	"Alias"
+	63252	"Parsing error"
+	63253	"Prototype"
+	63254	"Format identifier"
+	63255	"Format body"
+	63256	"HTML Element Text"
+	63257	"XML Element Text"
+END
