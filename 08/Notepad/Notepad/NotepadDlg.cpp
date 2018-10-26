@@ -30,6 +30,22 @@ void CNotepadDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CNotepadDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_COMMAND(ID_APP_EXIT, &CNotepadDlg::OnAppExit)
+	ON_WM_DROPFILES()
+	ON_COMMAND(ID_APP_ABOUT, &CNotepadDlg::OnAppAbout)
+	ON_WM_SIZE()
+	ON_WM_CLOSE()
+	ON_COMMAND(ID_EDIT_CLEAR, &CNotepadDlg::OnEditClear)
+	ON_COMMAND(ID_EDIT_COPY, &CNotepadDlg::OnEditCopy)
+	ON_COMMAND(ID_EDIT_CUT, &CNotepadDlg::OnEditCut)
+	ON_COMMAND(ID_EDIT_DATA, &CNotepadDlg::OnEditData)
+	ON_COMMAND(ID_EDIT_FIND, &CNotepadDlg::OnEditFind)
+	ON_COMMAND(ID_EDIT_FINDNEXT, &CNotepadDlg::OnEditFindnext)
+	ON_COMMAND(ID_EDIT_GO, &CNotepadDlg::OnEditGo)
+	ON_COMMAND(ID_EDIT_PASTE, &CNotepadDlg::OnEditPaste)
+	ON_COMMAND(ID_EDIT_REPLACE, &CNotepadDlg::OnEditReplace)
+	ON_COMMAND(ID_EDIT_UNDO, &CNotepadDlg::OnEditUndo)
+	ON_COMMAND(ID_EDIT_SELECT_ALL, &CNotepadDlg::OnEditSelectAll)
 END_MESSAGE_MAP()
 
 
@@ -38,6 +54,9 @@ END_MESSAGE_MAP()
 BOOL CNotepadDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	//加载快捷键  loadAccelerators() 函数用于加载指定的快捷键 表
+
+	HACCEL m_hAcc = LoadAccelerators(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_MAIN));
 
 	// 设置此对话框的图标。  当应用程序主窗口不是对话框时，框架将自动
 	//  执行此操作
@@ -89,8 +108,7 @@ HCURSOR CNotepadDlg::OnQueryDragIcon()
 
 void CNotepadDlg::OnOK()
 {
-	// TODO: 在此添加专用代码和/或调用基类
-
+	//ID_APP_EXIT
 	//CDialogEx::OnOK();
 }
 
@@ -100,4 +118,166 @@ void CNotepadDlg::OnCancel()
 	// TODO: 在此添加专用代码和/或调用基类
 
 	//CDialogEx::OnCancel();
+}
+
+
+void CNotepadDlg::OnAppExit()
+{
+	EndDialog(ID_APP_EXIT);
+}
+
+//启动Acccept Files= True 拖放文件后进入该消息
+void CNotepadDlg::OnDropFiles(HDROP hDropInfo)
+{
+	TCHAR sFile[256];
+	int nCount = DragQueryFile(hDropInfo, 0, sFile, _countof(sFile));
+	CFile file;// 打开的一般可能是非unicode ， 而你的界面是unicode
+	//SetDlgItemInt(...)
+
+	CDialogEx::OnDropFiles(hDropInfo);
+}
+/*  多文档的文件拖入  类似photoshop 拖入多文档一次打开
+//DragQueryFile()检索从成功的拖放操作中拖放的文件的名称
+TCHAR sFile[256];
+//sizeof(sFile);
+
+// nCount 为总拖入文件的数量
+int nCount = DragQueryFile(hDropInfo, -1, NULL, 0);
+int i = 0;
+
+while (i < nCount)
+{
+// 得到多个拖入文件的文件名
+DragQueryFile(hDropInfo, i, sFile, _countof(sFile));
+++i;
+}
+*/
+
+void CNotepadDlg::OnAppAbout()
+{
+	CAboutDlg dlg;
+	dlg.DoModal();
+	
+}
+
+
+void CNotepadDlg::OnSize(UINT nType, int cx, int cy)
+{
+	CDialogEx::OnSize(nType, cx, cy);
+	//获得这个控件
+	//CWnd *p = GetDlgItem(IDC_TEXT);
+	CEdit *p;
+	p = (CEdit*)GetDlgItem(IDC_TEXT);
+	if (p)
+	{
+		CRect rect;
+		GetClientRect(rect);
+		//更改位置和尺寸
+		p->MoveWindow(rect);
+		//强制转换为派生CEdit类
+	}
+
+}
+
+//系统关闭消息
+void CNotepadDlg::OnClose()
+{
+	EndDialog(IDCANCEL);
+	//CDialogEx::OnClose();
+}
+
+
+void CNotepadDlg::OnEditClear()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->Clear();
+
+}
+
+
+void CNotepadDlg::OnEditCopy()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->Copy();
+}
+
+
+void CNotepadDlg::OnEditCut()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->Cut();
+}
+
+/*插入日期函数*/
+void CNotepadDlg::OnEditData()
+{
+	COleDateTime time = COleDateTime::GetCurrentTime();
+	CString str = time.Format(_T("%H:%M %Y/%m/%d %W"));
+
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->ReplaceSel(str, 1);
+	//SetDlgItemText(IDC_TEXT, str);
+}
+
+
+void CNotepadDlg::OnEditFind()
+{
+	// TODO: 在此添加命令处理程序代码
+}
+
+
+void CNotepadDlg::OnEditFindnext()
+{
+	// TODO: 在此添加命令处理程序代码
+}
+
+
+void CNotepadDlg::OnEditGo()
+{
+	// TODO: 在此添加命令处理程序代码
+}
+
+
+void CNotepadDlg::OnEditPaste()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->Paste();
+}
+
+
+void CNotepadDlg::OnEditReplace()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+}
+
+
+void CNotepadDlg::OnEditUndo()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->Undo();
+}
+
+
+void CNotepadDlg::OnEditSelectAll()
+{
+	CEdit *pEdit = (CEdit *)GetDlgItem(IDC_TEXT);
+	pEdit->SetSel(0, -1);
+}
+
+
+BOOL CNotepadDlg::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO: 在此添加专用代码和/或调用基类
+	if (WM_KEYFIRST <= pMsg->message&&pMsg->message <= WM_KEYLAST)
+
+	{
+
+		HACCEL hAccel = m_hAcc;
+
+		if (hAccel && ::TranslateAccelerator(m_hWnd, hAccel, pMsg))
+
+			return TRUE;
+
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
 }
