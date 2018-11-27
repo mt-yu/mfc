@@ -66,4 +66,5 @@ public:
 	afx_msg void OnFileOpen();
 	afx_msg void OnFileSave();
 	afx_msg void OnFileSaveAs();
+	void LoadFile(LPCTSTR sFile);
 };

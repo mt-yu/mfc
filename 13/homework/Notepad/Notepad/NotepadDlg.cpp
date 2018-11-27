@@ -461,7 +461,14 @@ void CNotepadDlg::OnFileNew()
 
 void CNotepadDlg::OnFileOpen()
 {
-	CFileDialog dlg(TRUE, _T("txt"), NULL, );
+
+	//过滤器
+	LPCTSTR szFilter= _T("Text Files (*.txt)|*.txt|")
+					  _T("All Files (*.*)|*.*||");
+
+
+
+	CFileDialog dlg(TRUE, _T("txt"), NULL, OFN_ALLOWMULTISELECT, szFilter, this);
 	if (dlg.DoModal() == IDCANCEL)
 		return;
 	CString szFile = dlg.GetPathName();
@@ -479,4 +486,10 @@ void CNotepadDlg::OnFileSave()
 void CNotepadDlg::OnFileSaveAs()
 {
 
+}
+
+
+void CNotepadDlg::LoadFile(LPCTSTR sFile)
+{
+	// TODO: 在此处添加实现代码.
 }
